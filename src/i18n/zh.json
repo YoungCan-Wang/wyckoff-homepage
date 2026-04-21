@@ -1,0 +1,46 @@
+{
+  "nav": { "github": "GitHub", "demo": "在线体验" },
+  "hero": {
+    "title": "Wyckoff Trading Agent",
+    "tagline": "你说人话，他读盘面",
+    "subtitle": "A 股威科夫量价分析智能体",
+    "cta_github": "GitHub",
+    "cta_demo": "在线体验",
+    "cta_install": "pip install youngcan-wyckoff-analysis"
+  },
+  "features": {
+    "heading": "核心能力",
+    "items": [
+      { "title": "对话式 AI Agent", "desc": "自然语言触发诊断、筛选、研报。10 个量价工具自主编排，支持 Gemini / Claude / OpenAI。" },
+      { "title": "五层漏斗筛选", "desc": "全市场 4500+ 股票，经垃圾剥离、六通道甄选、板块共振、微观狙击、AI 审判，层层筛至 ~30 候选。" },
+      { "title": "持仓诊断", "desc": "批量体检持仓健康状态：均线结构、吸筹阶段、触发信号、止损位，输出 EXIT / TRIM / HOLD / PROBE / ATTACK 指令。" },
+      { "title": "AI 三阵营研报", "desc": "LLM 独立生成深度研报，给出逻辑破产、储备营地、起跳板三大判决。" },
+      { "title": "每日自动化", "desc": "5 条 GitHub Actions 定时管线：漏斗筛选 + AI 研报 + 再平衡、盘前风控、涨停复盘、推荐跟踪、缓存维护。" },
+      { "title": "多通道推送", "desc": "飞书、企微、钉钉、Telegram 四大通道，交易信号实时触达。" },
+      { "title": "信号确认池", "desc": "L4 触发信号经 1-3 天价格确认后方可操作，降低假突破风险。" },
+      { "title": "CLI + Web 双通道", "desc": "终端 TUI 极客范 + Streamlit Web 可视化，同一套工具两种打开方式。" }
+    ]
+  },
+  "howItWorks": {
+    "heading": "三步开始",
+    "steps": [
+      { "title": "安装", "desc": "一行命令安装", "code": "pip install youngcan-wyckoff-analysis" },
+      { "title": "配置", "desc": "选择模型，配置 API Key", "code": "wyckoff\n> /model" },
+      { "title": "对话", "desc": "用自然语言和威科夫大师对话", "code": "> 帮我看看 000001" }
+    ]
+  },
+  "techStack": { "heading": "技术栈" },
+  "quickStart": { "heading": "快速开始" },
+  "community": {
+    "heading": "社区",
+    "feishuGroup": "飞书交流群",
+    "star": "觉得有帮助？给个 Star",
+    "starSub": "赚到钱了？请作者吃个汉堡"
+  },
+  "footer": {
+    "product": "产品",
+    "community": "社区",
+    "legal": "法律",
+    "copyright": "2024-2026 youngcan. AGPL-3.0"
+  }
+}
