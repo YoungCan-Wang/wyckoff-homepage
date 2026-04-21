@@ -31,7 +31,7 @@ export const zh = {
       { n: '03', title: '对话', cmd: '> 帮我诊断一下持仓' },
     ],
   },
-  stack: { label: '技术栈' },
+  stack: { label: '技术栈', data: '行情数据接入', tickflow: 'TickFlow 行情数据' },
   community: {
     title: '加入社区',
     desc: '觉得有帮助？给个 Star。赚到钱了？请作者吃个汉堡。',
@@ -41,7 +41,8 @@ export const zh = {
     product: '产品',
     community: '社区',
     legal: '法律',
-    demo: '在线体验',
+    demo: '在线使用',
+    tickflow: 'TickFlow 行情',
     copy: '© 2024-2026 youngcan. AGPL-3.0',
   },
 }
@@ -77,7 +78,7 @@ export const en: typeof zh = {
       { n: '03', title: 'Talk', cmd: '> Diagnose my portfolio' },
     ],
   },
-  stack: { label: 'Tech Stack' },
+  stack: { label: 'Tech Stack', data: 'Market Data Integration', tickflow: 'TickFlow Market Data' },
   community: {
     title: 'Join the Community',
     desc: 'Find it useful? Star the repo. Made some profit? Buy the author a burger.',
@@ -87,7 +88,8 @@ export const en: typeof zh = {
     product: 'Product',
     community: 'Community',
     legal: 'Legal',
-    demo: 'Live Demo',
+    demo: 'Web App',
+    tickflow: 'TickFlow Data',
     copy: '© 2024-2026 youngcan. AGPL-3.0',
   },
 }

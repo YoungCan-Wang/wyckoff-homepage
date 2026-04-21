@@ -5,6 +5,7 @@ import Hero from './components/Hero'
 import Features from './components/Features'
 import Steps from './components/Steps'
 import Stack from './components/Stack'
+import DataSource from './components/DataSource'
 import Community from './components/Community'
 import Footer from './components/Footer'
 
@@ -20,14 +21,15 @@ export default function App() {
 
   return (
     <I18nContext.Provider value={ctx}>
-      <div className="noise min-h-screen bg-[#09090b]">
+      <div className="noise min-h-screen bg-white dark:bg-[#09090b]">
         <Navbar />
         <main>
           <Hero />
           <Features />
+          <DataSource />
           <Steps />
-          <Stack />
           <Community />
+          <Stack />
         </main>
         <Footer />
       </div>

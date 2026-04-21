@@ -12,14 +12,26 @@ html { scroll-behavior: smooth; }
 /* grid background */
 .grid-bg {
   background-image:
-    linear-gradient(rgba(34,197,94,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(34,197,94,0.03) 1px, transparent 1px);
+    linear-gradient(rgba(34,197,94,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34,197,94,0.06) 1px, transparent 1px);
   background-size: 64px 64px;
+}
+@media (prefers-color-scheme: dark) {
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(34,197,94,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(34,197,94,0.03) 1px, transparent 1px);
+  }
 }
 
 /* glow */
 .glow-green {
-  box-shadow: 0 0 60px rgba(34,197,94,0.08), 0 0 120px rgba(34,197,94,0.04);
+  box-shadow: 0 0 60px rgba(34,197,94,0.06), 0 0 120px rgba(34,197,94,0.03);
+}
+@media (prefers-color-scheme: dark) {
+  .glow-green {
+    box-shadow: 0 0 60px rgba(34,197,94,0.08), 0 0 120px rgba(34,197,94,0.04);
+  }
 }
 
 /* terminal cursor blink */

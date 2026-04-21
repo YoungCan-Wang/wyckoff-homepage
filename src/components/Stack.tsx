@@ -17,11 +17,9 @@ export default function Stack() {
   const { t } = useI18n()
 
   return (
-    <section className="py-20 px-6 border-t border-white/[0.04]">
+    <section className="py-20 px-6 border-t border-zinc-200 dark:border-white/[0.04]">
       <div className="max-w-3xl mx-auto text-center">
-        <span className="inline-block text-[11px] font-mono text-emerald-400 tracking-widest uppercase mb-8">
-          {t.stack.label}
-        </span>
+        <h2 className="text-2xl font-bold text-zinc-800 dark:text-zinc-100 mb-8">{t.stack.label}</h2>
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -32,7 +30,7 @@ export default function Stack() {
           {techs.map((tech) => (
             <span
               key={tech.name}
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-zinc-800 text-xs font-mono text-zinc-400 hover:border-zinc-600 hover:text-zinc-200 transition-colors"
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-zinc-300 text-xs font-mono text-zinc-500 hover:border-zinc-400 hover:text-zinc-700 dark:border-zinc-800 dark:text-zinc-400 dark:hover:border-zinc-600 dark:hover:text-zinc-200 transition-colors"
             >
               <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: tech.color }} />
               {tech.name}
