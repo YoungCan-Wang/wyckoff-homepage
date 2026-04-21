@@ -15,9 +15,9 @@ export default function QuickStart() {
   const { t } = useLanguage()
 
   return (
-    <section id="quickstart" className="py-20 px-4 bg-slate-50 dark:bg-slate-900/50">
-      <div className="max-w-2xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center text-slate-900 dark:text-white mb-10">
+    <section id="quickstart" className="py-16 px-6 border-y border-[--color-border] dark:border-[--color-border-dark] bg-[--color-surface] dark:bg-[--color-surface-dark]">
+      <div className="max-w-[560px] mx-auto">
+        <h2 className="text-2xl font-bold text-center text-[--color-heading] dark:text-[--color-heading-dark] mb-8">
           {t('quickStart.heading')}
         </h2>
         <CodeBlock code={installCode} />

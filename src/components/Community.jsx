@@ -1,29 +1,28 @@
 import { Star } from 'lucide-react'
 import { useLanguage } from '../i18n/LanguageContext'
+import GithubIcon from './GithubIcon'
 
 export default function Community() {
   const { t } = useLanguage()
 
   return (
-    <section className="py-20 px-4">
-      <div className="max-w-3xl mx-auto text-center">
-        <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-10">
+    <section className="py-16 px-6">
+      <div className="max-w-[560px] mx-auto text-center">
+        <h2 className="text-2xl font-bold text-[--color-heading] dark:text-[--color-heading-dark] mb-3">
           {t('community.heading')}
         </h2>
+        <p className="text-sm text-[--color-muted] mb-8">{t('community.starSub')}</p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
-          <a
-            href="https://github.com/YoungCan-Wang/Wyckoff-Analysis"
-            target="_blank"
-            rel="noopener"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-semibold rounded-lg hover:bg-slate-800 dark:hover:bg-slate-100 transition-colors shadow-lg"
-          >
-            <Star size={18} />
-            {t('community.star')}
-          </a>
-        </div>
-
-        <p className="text-sm text-slate-400">{t('community.starSub')}</p>
+        <a
+          href="https://github.com/YoungCan-Wang/Wyckoff-Analysis"
+          target="_blank"
+          rel="noopener"
+          className="inline-flex items-center gap-2 px-5 py-2.5 bg-[--color-heading] dark:bg-[--color-heading-dark] text-white dark:text-[#0f1117] font-medium rounded-lg hover:opacity-90 transition-opacity"
+        >
+          <GithubIcon size={16} />
+          <Star size={16} />
+          {t('community.star')}
+        </a>
       </div>
     </section>
   )

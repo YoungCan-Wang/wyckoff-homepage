@@ -8,28 +8,28 @@ export default function HowItWorks() {
   const steps = t('howItWorks.steps')
 
   return (
-    <section className="py-20 px-4 bg-slate-50 dark:bg-slate-900/50">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center text-slate-900 dark:text-white mb-14">
+    <section className="py-16 px-6 border-y border-[--color-border] dark:border-[--color-border-dark] bg-[--color-surface] dark:bg-[--color-surface-dark]">
+      <div className="max-w-[720px] mx-auto">
+        <h2 className="text-2xl font-bold text-[--color-heading] dark:text-[--color-heading-dark] text-center mb-12">
           {t('howItWorks.heading')}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-          {/* connector line (desktop) */}
-          <div className="hidden md:block absolute top-10 left-[16.67%] right-[16.67%] h-0.5 bg-gradient-to-r from-indigo-300 via-purple-300 to-indigo-300 dark:from-indigo-700 dark:via-purple-700 dark:to-indigo-700" />
+          {/* connector */}
+          <div className="hidden md:block absolute top-8 left-[20%] right-[20%] h-px border-t border-dashed border-[--color-border] dark:border-[--color-border-dark]" />
 
           {Array.isArray(steps) && steps.map((step, i) => {
             const Icon = stepIcons[i]
             return (
               <div key={i} className="relative flex flex-col items-center text-center">
-                <div className="w-20 h-20 rounded-full bg-indigo-100 dark:bg-indigo-500/10 flex items-center justify-center mb-4 relative z-10">
-                  <div className="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-indigo-500 text-white text-xs font-bold flex items-center justify-center">
+                <div className="w-16 h-16 rounded-full border-2 border-[--color-border] dark:border-[--color-border-dark] bg-white dark:bg-[#0f1117] flex items-center justify-center mb-4 relative z-10">
+                  <Icon size={22} className="text-[--color-accent]" strokeWidth={1.8} />
+                  <span className="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-[--color-accent] text-white text-[11px] font-bold flex items-center justify-center">
                     {i + 1}
-                  </div>
-                  <Icon size={28} className="text-indigo-500" />
+                  </span>
                 </div>
-                <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-1">{step.title}</h3>
-                <p className="text-sm text-slate-500 dark:text-slate-400 mb-3">{step.desc}</p>
-                <code className="text-xs bg-slate-900 dark:bg-slate-800 text-green-400 px-3 py-1.5 rounded-md whitespace-pre-line">
+                <h3 className="text-sm font-semibold text-[--color-heading] dark:text-[--color-heading-dark] mb-1">{step.title}</h3>
+                <p className="text-xs text-[--color-muted] mb-3">{step.desc}</p>
+                <code className="text-xs font-mono bg-[#1a1b26] text-emerald-400 px-3 py-1.5 rounded-md whitespace-pre-line">
                   {step.code}
                 </code>
               </div>

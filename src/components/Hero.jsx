@@ -1,4 +1,4 @@
-import { ExternalLink, Copy, Check } from 'lucide-react'
+import { ExternalLink, Copy, Check, ArrowRight } from 'lucide-react'
 import { useState } from 'react'
 import { useLanguage } from '../i18n/LanguageContext'
 import GithubIcon from './GithubIcon'
@@ -14,56 +14,65 @@ export default function Hero() {
   }
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* gradient bg */}
-      <div className="absolute inset-0 bg-gradient-to-br from-indigo-600 via-purple-600 to-indigo-800 dark:from-slate-950 dark:via-indigo-950 dark:to-slate-900 animate-gradient" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.1),transparent_50%)]" />
+    <section className="pt-32 pb-20 px-6">
+      <div className="max-w-[720px] mx-auto text-center">
+        {/* badge */}
+        <div className="inline-flex items-center gap-2 px-3 py-1 mb-8 rounded-full border border-[--color-border] dark:border-[--color-border-dark] text-xs font-medium text-[--color-muted]">
+          <span className="w-1.5 h-1.5 rounded-full bg-[--color-accent]" />
+          Open Source &middot; AGPL-3.0
+        </div>
 
-      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-4 tracking-tight">
+        <h1 className="text-4xl sm:text-5xl font-bold text-[--color-heading] dark:text-[--color-heading-dark] mb-5 tracking-tight leading-[1.15]">
           {t('hero.title')}
         </h1>
-        <p className="text-xl sm:text-2xl text-indigo-100 dark:text-indigo-200 font-medium mb-2">
+        <p className="text-lg sm:text-xl text-[--color-accent] font-medium mb-3">
           {t('hero.tagline')}
         </p>
-        <p className="text-base sm:text-lg text-indigo-200/80 dark:text-indigo-300/60 mb-10">
+        <p className="text-base text-[--color-muted] mb-10 max-w-[520px] mx-auto leading-relaxed">
           {t('hero.subtitle')}
         </p>
 
-        {/* CTA buttons */}
-        <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
+        {/* CTA */}
+        <div className="flex flex-wrap items-center justify-center gap-3 mb-6">
           <a
             href="https://github.com/YoungCan-Wang/Wyckoff-Analysis"
             target="_blank"
             rel="noopener"
-            className="inline-flex items-center gap-2 px-5 py-2.5 bg-white text-indigo-700 font-semibold rounded-lg hover:bg-indigo-50 transition-colors shadow-lg"
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-[--color-accent] text-white font-medium rounded-lg hover:opacity-90 transition-opacity"
           >
-            <GithubIcon size={18} />
-            {t('hero.cta_github')}
+            <GithubIcon size={16} />
+            GitHub
+            <ArrowRight size={14} />
           </a>
           <a
             href="https://wyckoff-analysis-youngcanphoenix.streamlit.app/"
             target="_blank"
             rel="noopener"
-            className="inline-flex items-center gap-2 px-5 py-2.5 border border-white/30 text-white font-semibold rounded-lg hover:bg-white/10 transition-colors"
+            className="inline-flex items-center gap-2 px-5 py-2.5 border border-[--color-border] dark:border-[--color-border-dark] text-[--color-heading] dark:text-[--color-heading-dark] font-medium rounded-lg hover:border-[--color-accent] hover:text-[--color-accent] transition-colors"
           >
-            <ExternalLink size={18} />
+            <ExternalLink size={16} />
             {t('hero.cta_demo')}
           </a>
-          <button
-            onClick={handleCopy}
-            className="inline-flex items-center gap-2 px-4 py-2.5 bg-slate-900/50 text-green-300 font-mono text-sm rounded-lg border border-white/10 hover:bg-slate-900/70 transition-colors"
-          >
-            <span>$ pip install youngcan-wyckoff-analysis</span>
-            {copied ? <Check size={14} className="text-green-400" /> : <Copy size={14} className="text-slate-400" />}
-          </button>
         </div>
 
+        {/* install command */}
+        <button
+          onClick={handleCopy}
+          className="inline-flex items-center gap-3 px-4 py-2 bg-[--color-surface] dark:bg-[--color-surface-dark] rounded-lg border border-[--color-border] dark:border-[--color-border-dark] hover:border-[--color-accent] transition-colors group"
+        >
+          <code className="text-sm font-mono text-[--color-text] dark:text-[--color-text-dark]">
+            <span className="text-[--color-accent]">$</span> pip install youngcan-wyckoff-analysis
+          </code>
+          {copied
+            ? <Check size={14} className="text-[--color-accent]" />
+            : <Copy size={14} className="text-[--color-muted] group-hover:text-[--color-accent] transition-colors" />
+          }
+        </button>
+
         {/* badges */}
-        <div className="flex flex-wrap items-center justify-center gap-2">
-          <img src="https://img.shields.io/pypi/v/youngcan-wyckoff-analysis?color=6366f1" alt="PyPI" className="h-5" />
-          <img src="https://img.shields.io/badge/python-3.11+-3776ab?logo=python&logoColor=white" alt="Python" className="h-5" />
-          <img src="https://img.shields.io/badge/license-AGPL--3.0-green" alt="License" className="h-5" />
+        <div className="flex flex-wrap items-center justify-center gap-2 mt-8">
+          <img src="https://img.shields.io/pypi/v/youngcan-wyckoff-analysis?color=0d9373&labelColor=f9fafb" alt="PyPI" className="h-5" />
+          <img src="https://img.shields.io/badge/python-3.11+-3776ab?logo=python&logoColor=white&labelColor=f9fafb" alt="Python" className="h-5" />
           <img src="https://img.shields.io/github/stars/YoungCan-Wang/Wyckoff-Analysis?style=social" alt="Stars" className="h-5" />
         </div>
       </div>
