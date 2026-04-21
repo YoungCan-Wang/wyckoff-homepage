@@ -7,7 +7,7 @@ export default function Hero() {
   const [copied, setCopied] = useState(false)
 
   const copy = () => {
-    navigator.clipboard.writeText('pip install youngcan-wyckoff-analysis')
+    navigator.clipboard.writeText('curl -fsSL https://raw.githubusercontent.com/YoungCan-Wang/Wyckoff-Analysis/main/install.sh | bash')
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
   }
@@ -92,8 +92,9 @@ export default function Hero() {
         >
           <code className="text-sm font-mono">
             <span className="text-emerald-600 dark:text-emerald-400">$</span>
-            <span className="text-zinc-500 dark:text-zinc-400"> pip install </span>
-            <span className="text-zinc-800 dark:text-zinc-200">youngcan-wyckoff-analysis</span>
+            <span className="text-zinc-500 dark:text-zinc-400"> curl -fsSL </span>
+            <span className="text-zinc-800 dark:text-zinc-200">https://...install.sh</span>
+            <span className="text-zinc-500 dark:text-zinc-400"> | bash</span>
           </code>
           <span className="text-[11px] text-zinc-400 group-hover:text-emerald-500 dark:text-zinc-600 dark:group-hover:text-emerald-400 transition-colors font-mono">
             {copied ? '✓' : 'copy'}
