@@ -27,6 +27,7 @@ export const zh = {
     label: 'Web App',
     desc: '基于 Streamlit 的可视化投研平台 — 注册即用，无需安装',
     cta: '立即体验',
+    explore: '更多功能点开探索 →',
     tabs: {
       chat: { title: '读盘室', desc: '与威科夫大师对话，自然语言驱动量价分析，自动编排 10 个量化工具给出持仓建议。' },
       export: { title: '数据导出', desc: '支持 OHLCV 增强版 / 原始数据下载，覆盖 ETF、指数、宏观 CPI 等多数据源，自定义导出。' },
@@ -151,6 +152,7 @@ export const en: typeof zh = {
     label: 'Web App',
     desc: 'Streamlit-powered visual research platform — sign up and use, no install required',
     cta: 'Try it now',
+    explore: 'Explore more features →',
     tabs: {
       chat: { title: 'Trading Room', desc: 'Chat with the Wyckoff master. Natural language drives volume-price analysis, auto-orchestrates 10 quant tools for portfolio advice.' },
       export: { title: 'Data Export', desc: 'Download enhanced OHLCV or raw data. Covers ETFs, indices, macro CPI, and more with custom export options.' },

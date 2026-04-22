@@ -5,16 +5,16 @@ import { useI18n } from '../i18n'
 const BASE = import.meta.env.BASE_URL
 
 const screens = [
+  { key: 'login', img: `${BASE}screenshots/login.png` },
   { key: 'chat', img: `${BASE}screenshots/chat.png` },
   { key: 'export', img: `${BASE}screenshots/export.png` },
-  { key: 'login', img: `${BASE}screenshots/login.png` },
 ] as const
 
 type ScreenKey = (typeof screens)[number]['key']
 
 export default function WebApp() {
   const { t } = useI18n()
-  const [active, setActive] = useState<ScreenKey>('chat')
+  const [active, setActive] = useState<ScreenKey>('login')
   const tabs = t.webapp.tabs as Record<ScreenKey, { title: string; desc: string }>
   const current = screens.find((s) => s.key === active)!
 
@@ -76,15 +76,14 @@ export default function WebApp() {
           </p>
         </motion.div>
 
-        {/* CTA */}
-        <div className="mt-8 text-center">
+        <div className="mt-6 text-center">
           <a
             href="https://wyckoff-analysis-youngcanphoenix.streamlit.app/"
             target="_blank"
             rel="noopener"
-            className="inline-flex items-center gap-2 px-5 py-2.5 bg-emerald-500 text-white dark:text-black font-medium text-sm rounded-lg hover:bg-emerald-400 transition-colors"
+            className="text-xs text-zinc-400 hover:text-emerald-500 transition-colors"
           >
-            {t.webapp.cta} →
+            {t.webapp.explore}
           </a>
         </div>
       </div>
