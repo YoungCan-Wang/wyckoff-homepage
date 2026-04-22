@@ -13,7 +13,7 @@ export const zh = {
   features: {
     label: '核心能力',
     items: [
-      { tag: 'Agent', title: '对话式 AI Agent', desc: '自然语言驱动，自主编排 10 个量化工具。支持 Gemini、Claude、OpenAI 多模型切换。' },
+      { tag: 'Agent', title: '对话式 AI Agent', desc: '自然语言驱动，自主编排 16 个工具（量价分析 + 读写文件 + 执行命令 + 抓取网页）。发个 CSV 路径就能分析。' },
       { tag: 'Funnel', title: '五层漏斗筛选', desc: '垃圾剥离 → 六通道甄选 → 板块共振 → 微观狙击 → AI 审判，全市场漏斗。' },
       { tag: 'Diagnosis', title: '持仓诊断', desc: '批量体检均线结构、吸筹阶段、触发信号，输出 EXIT / TRIM / HOLD / PROBE / ATTACK。' },
       { tag: 'Report', title: 'AI 三阵营研报', desc: 'LLM 独立给出逻辑破产、储备营地、起跳板三大判决。' },
@@ -21,6 +21,8 @@ export const zh = {
       { tag: 'Push', title: '多通道推送', desc: '飞书、企微、钉钉、Telegram 四通道，信号实时触达。' },
       { tag: 'Confirm', title: '信号确认池', desc: 'L4 触发信号经 1-3 天价格确认，降低假突破风险。' },
       { tag: 'Dual', title: 'CLI + Web', desc: '终端 TUI 极客范 + Streamlit 可视化，同一套引擎两种入口。' },
+      { tag: 'Realtime', title: '盘中持仓监控', desc: 'TickFlow 实时行情驱动，止损穿破 / 跳空低开 / 放量滞涨 / VWAP 破位四维盘中预警。' },
+      { tag: 'General', title: '通用 Agent 能力', desc: '不只是股票工具 — 执行命令、读写文件、抓取网页，发个文件路径就能帮你分析数据。' },
     ],
   },
   webapp: {
@@ -138,7 +140,7 @@ export const en: typeof zh = {
   features: {
     label: 'Key Features',
     items: [
-      { tag: 'Agent', title: 'Conversational AI Agent', desc: 'Natural language driven, autonomously orchestrates 10 quant tools. Multi-LLM: Gemini, Claude, OpenAI.' },
+      { tag: 'Agent', title: 'Conversational AI Agent', desc: 'Natural language driven, orchestrates 16 tools (quant analysis + file I/O + shell exec + web fetch). Drop a CSV path and it analyzes.' },
       { tag: 'Funnel', title: 'Five-Layer Funnel', desc: 'Garbage filter → Six channels → Sector resonance → Micro triggers → AI verdict. Full-market funnel.' },
       { tag: 'Diagnosis', title: 'Portfolio Diagnosis', desc: 'Batch health check: MA structure, accumulation phase, triggers. Outputs EXIT / TRIM / HOLD / PROBE / ATTACK.' },
       { tag: 'Report', title: 'AI Three-Camp Reports', desc: 'LLM renders three verdicts: Logic Bankrupt, Reserve Camp, Springboard.' },
@@ -146,6 +148,8 @@ export const en: typeof zh = {
       { tag: 'Push', title: 'Multi-Channel Push', desc: 'Feishu, WeCom, DingTalk, Telegram — signals delivered in real time.' },
       { tag: 'Confirm', title: 'Signal Confirmation', desc: 'L4 triggers require 1-3 day price confirmation, reducing false breakout risk.' },
       { tag: 'Dual', title: 'CLI + Web', desc: 'Terminal TUI for power users + Streamlit Web for visualization. Same engine, two entry points.' },
+      { tag: 'Realtime', title: 'Intraday Monitor', desc: 'TickFlow real-time quotes: stop-loss breach / gap-down / volume stall / VWAP breakdown — four-dimensional intraday alerts.' },
+      { tag: 'General', title: 'General Agent', desc: 'Not just stock tools — exec commands, read/write files, fetch web pages. Drop a file path and it analyzes your data.' },
     ],
   },
   webapp: {
