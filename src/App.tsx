@@ -5,7 +5,9 @@ import Hero from './components/Hero'
 import Features from './components/Features'
 import Steps from './components/Steps'
 import Stack from './components/Stack'
+import WebApp from './components/WebApp'
 import DataSource from './components/DataSource'
+import CliReference from './components/CliReference'
 import Community from './components/Community'
 import Footer from './components/Footer'
 
@@ -26,8 +28,10 @@ export default function App() {
         <main>
           <Hero />
           <Features />
+          <WebApp />
           <DataSource />
           <Steps />
+          <CliReference />
           <Community />
           <Stack />
         </main>

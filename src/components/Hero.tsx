@@ -4,12 +4,18 @@ import { useI18n } from '../i18n'
 
 export default function Hero() {
   const { t } = useI18n()
-  const [copied, setCopied] = useState(false)
+  const [copied, setCopied] = useState<'cli' | 'skill' | null>(null)
 
-  const copy = () => {
+  const copyCli = () => {
     navigator.clipboard.writeText('curl -fsSL https://raw.githubusercontent.com/YoungCan-Wang/Wyckoff-Analysis/main/install.sh | bash')
-    setCopied(true)
-    setTimeout(() => setCopied(false), 2000)
+    setCopied('cli')
+    setTimeout(() => setCopied(null), 2000)
+  }
+
+  const copySkill = () => {
+    navigator.clipboard.writeText('npx skills add https://github.com/YoungCan-Wang/wyckoff_skill')
+    setCopied('skill')
+    setTimeout(() => setCopied(null), 2000)
   }
 
   return (
@@ -80,26 +86,50 @@ export default function Hero() {
           >
             Skill →
           </a>
+          <a
+            href="https://clawhub.ai/youngcan-wang/wyckoff-agent-skill" target="_blank" rel="noopener"
+            className="inline-flex items-center gap-1.5 px-5 py-2.5 border border-zinc-300 text-zinc-700 dark:border-zinc-800 dark:text-zinc-300 font-medium text-sm rounded-lg hover:border-zinc-400 hover:text-zinc-900 dark:hover:border-zinc-600 dark:hover:text-white transition-colors"
+          >
+            OpenClaw
+            <img src={`${import.meta.env.BASE_URL}openclaw.svg`} alt="OpenClaw" className="w-4 h-4" />
+          </a>
         </motion.div>
 
-        {/* install bar */}
-        <motion.button
+        {/* install bars */}
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.5 }}
-          onClick={copy}
-          className="group inline-flex items-center gap-3 px-4 py-2 rounded-lg bg-zinc-100 border border-zinc-200 hover:border-emerald-500/30 dark:bg-zinc-900/80 dark:border-zinc-800 transition-all"
+          className="flex flex-col items-center gap-2"
         >
-          <code className="text-sm font-mono">
-            <span className="text-emerald-600 dark:text-emerald-400">$</span>
-            <span className="text-zinc-500 dark:text-zinc-400"> curl -fsSL </span>
-            <span className="text-zinc-800 dark:text-zinc-200">https://...install.sh</span>
-            <span className="text-zinc-500 dark:text-zinc-400"> | bash</span>
-          </code>
-          <span className="text-[11px] text-zinc-400 group-hover:text-emerald-500 dark:text-zinc-600 dark:group-hover:text-emerald-400 transition-colors font-mono">
-            {copied ? '✓' : 'copy'}
-          </span>
-        </motion.button>
+          <button
+            onClick={copyCli}
+            className="group inline-flex items-center gap-3 px-4 py-2 rounded-lg bg-zinc-100 border border-zinc-200 hover:border-emerald-500/30 dark:bg-zinc-900/80 dark:border-zinc-800 transition-all"
+          >
+            <code className="text-sm font-mono">
+              <span className="text-emerald-600 dark:text-emerald-400">$</span>
+              <span className="text-zinc-500 dark:text-zinc-400"> curl -fsSL </span>
+              <span className="text-zinc-800 dark:text-zinc-200">https://...install.sh</span>
+              <span className="text-zinc-500 dark:text-zinc-400"> | bash</span>
+            </code>
+            <span className="text-[11px] text-zinc-400 group-hover:text-emerald-500 dark:text-zinc-600 dark:group-hover:text-emerald-400 transition-colors font-mono">
+              {copied === 'cli' ? '✓' : 'copy'}
+            </span>
+          </button>
+          <button
+            onClick={copySkill}
+            className="group inline-flex items-center gap-3 px-4 py-2 rounded-lg bg-zinc-100 border border-zinc-200 hover:border-emerald-500/30 dark:bg-zinc-900/80 dark:border-zinc-800 transition-all"
+          >
+            <code className="text-sm font-mono">
+              <span className="text-emerald-600 dark:text-emerald-400">$</span>
+              <span className="text-zinc-500 dark:text-zinc-400"> npx skills add </span>
+              <span className="text-zinc-800 dark:text-zinc-200">https://github.com/.../wyckoff_skill</span>
+            </code>
+            <span className="text-[11px] text-zinc-400 group-hover:text-emerald-500 dark:text-zinc-600 dark:group-hover:text-emerald-400 transition-colors font-mono">
+              {copied === 'skill' ? '✓' : 'copy'}
+            </span>
+          </button>
+        </motion.div>
 
         {/* badges */}
         <div className="flex flex-wrap items-center justify-center gap-2 mt-8 opacity-60">
