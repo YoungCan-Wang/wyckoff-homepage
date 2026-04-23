@@ -58,8 +58,9 @@ export default function Footer() {
           </a>
         </div>
 
-        <div className="border-t border-zinc-200 dark:border-white/[0.04] pt-5 text-center text-[11px] font-mono text-zinc-400 dark:text-zinc-700">
-          {t.footer.copy}
+        <div className="border-t border-zinc-200 dark:border-white/[0.04] pt-5 text-center">
+          <p className="text-[11px] text-zinc-400 dark:text-zinc-600 leading-relaxed mb-3">{t.footer.disclaimer}</p>
+          <p className="text-[11px] font-mono text-zinc-400 dark:text-zinc-700">{t.footer.copy}</p>
         </div>
       </div>
     </footer>
