@@ -55,6 +55,14 @@ export const zh = {
       analysis: { title: '诊断报告', desc: '五张体检报告速览：健康灯、核心结论、关键缺陷、生死线，一目了然。' },
       result: { title: '操作指令', desc: '威科夫大去留令：EXIT / TRIM / HOLD / PROBE / ATTACK，逐票给出理由与风险铁律。' },
     },
+    dashboard: {
+      label: '本地可视化面板',
+      desc: '全部数据存储在本地 SQLite，无需联网，安全可信',
+      screens: {
+        overview: { title: '数据总览', desc: '推荐跟踪、信号池、持仓、Agent 记忆、同步状态一目了然。' },
+        chatlog: { title: '对话日志', desc: '完整记录每次对话：用户输入、模型输出、Token 消耗、工具调用，支持按会话浏览。' },
+      },
+    },
     groups: [
       {
         title: '认证 · auth',
@@ -200,6 +208,14 @@ export const en: typeof zh = {
       running: { title: 'Portfolio', desc: 'Natural language portfolio queries — the agent auto-invokes tools and replies in Wyckoff voice.' },
       analysis: { title: 'Diagnosis', desc: 'Five-stock health report at a glance: health light, core verdict, key flaws, and survival line.' },
       result: { title: 'Orders', desc: 'Wyckoff action orders: EXIT / TRIM / HOLD / PROBE / ATTACK with per-stock reasoning and risk rules.' },
+    },
+    dashboard: {
+      label: 'Local Dashboard',
+      desc: 'All data stored in local SQLite — no network required, secure and trustworthy',
+      screens: {
+        overview: { title: 'Overview', desc: 'Recommendations, signals, portfolio, agent memory, and sync status at a glance.' },
+        chatlog: { title: 'Chat Log', desc: 'Full conversation history: user input, model output, token usage, tool calls — browsable by session.' },
+      },
     },
     groups: [
       {
