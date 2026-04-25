@@ -24,6 +24,7 @@ export const zh = {
       { tag: 'Confirm', title: '信号确认池', desc: 'L4 触发信号经 1-3 天价格确认，降低假突破风险。' },
       { tag: 'Memory', title: 'Agent 跨会话记忆', desc: '自动提取对话结论存入 SQLite，下次提问时注入相关股票的历史分析上下文。' },
       { tag: 'Realtime', title: '盘中持仓监控', desc: 'TickFlow 实时行情驱动，止损穿破 / 跳空低开 / 放量滞涨 / VWAP 破位四维盘中预警。' },
+      { tag: 'MCP', title: 'MCP Server', desc: '14 个工具通过 MCP 协议对外暴露，Claude Code / Cursor / 任何 MCP Client 即插即用，一行命令注册。' },
       { tag: 'General', title: '通用 Agent 能力', desc: '不只是股票工具 — 执行命令、读写文件、抓取网页，发个文件路径就能帮你分析数据。' },
     ],
   },
@@ -137,6 +138,30 @@ export const zh = {
       },
     ],
   },
+  agentPrompt: {
+    label: '一键配置 Agent',
+    desc: '复制下方提示词发给你的 AI Agent（Claude Code / Cursor / ChatGPT 等），它会帮你完成安装和配置',
+    copy: '复制给Agent',
+    copied: '已复制 ✓',
+    prompt: `请帮我完成以下任务：
+
+1. 访问 https://github.com/YoungCan-Wang/Wyckoff-Analysis 并帮我点 Star
+
+2. 安装 Wyckoff CLI（一键脚本，自动检测环境）：
+   curl -fsSL https://raw.githubusercontent.com/YoungCan-Wang/Wyckoff-Analysis/main/install.sh | bash
+
+3. 运行 wyckoff 启动 CLI，用 /model 命令配置 LLM API Key（Gemini / Claude / OpenAI 任选一个）
+
+4. 配置数据源（可选，提升数据质量）：
+   wyckoff config tushare <your_tushare_token>
+   wyckoff config tickflow <your_tickflow_api_key>
+
+5. 安装 MCP 依赖并注册 Wyckoff MCP Server：
+   pip install "youngcan-wyckoff-analysis[mcp]"
+   claude mcp add wyckoff -- wyckoff-mcp
+
+注册完成后，你就可以直接使用 diagnose_stock、screen_stocks、get_signal_pending 等 14 个威科夫量价分析工具了。试试问"帮我诊断 000001"。`,
+  },
   stack: { label: '技术栈', data: '行情数据接入', tickflow: 'TickFlow 行情数据' },
   community: {
     title: '加入社区',
@@ -178,6 +203,7 @@ export const en: typeof zh = {
       { tag: 'Confirm', title: 'Signal Confirmation', desc: 'L4 triggers require 1-3 day price confirmation, reducing false breakout risk.' },
       { tag: 'Memory', title: 'Cross-Session Memory', desc: 'Auto-extracts conversation conclusions to SQLite. Injects relevant stock analysis context on next query.' },
       { tag: 'Realtime', title: 'Intraday Monitor', desc: 'TickFlow real-time quotes: stop-loss breach / gap-down / volume stall / VWAP breakdown — four-dimensional intraday alerts.' },
+      { tag: 'MCP', title: 'MCP Server', desc: '14 tools exposed via MCP protocol — plug into Claude Code / Cursor / any MCP client with one command.' },
       { tag: 'General', title: 'General Agent', desc: 'Not just stock tools — exec commands, read/write files, fetch web pages. Drop a file path and it analyzes your data.' },
     ],
   },
@@ -290,6 +316,30 @@ export const en: typeof zh = {
         ],
       },
     ],
+  },
+  agentPrompt: {
+    label: 'One-Click Agent Setup',
+    desc: 'Copy the prompt below and send it to your AI Agent (Claude Code / Cursor / ChatGPT, etc.) — it will handle the install and config for you',
+    copy: 'Copy for Agent',
+    copied: 'Copied ✓',
+    prompt: `Please help me complete the following tasks:
+
+1. Visit https://github.com/YoungCan-Wang/Wyckoff-Analysis and star the repo
+
+2. Install Wyckoff CLI (one-line script, auto-detects environment):
+   curl -fsSL https://raw.githubusercontent.com/YoungCan-Wang/Wyckoff-Analysis/main/install.sh | bash
+
+3. Run wyckoff to launch the CLI, then use the /model command to configure an LLM API Key (Gemini / Claude / OpenAI — pick one)
+
+4. Configure data sources (optional, improves data quality):
+   wyckoff config tushare <your_tushare_token>
+   wyckoff config tickflow <your_tickflow_api_key>
+
+5. Install MCP dependency and register the Wyckoff MCP Server:
+   pip install "youngcan-wyckoff-analysis[mcp]"
+   claude mcp add wyckoff -- wyckoff-mcp
+
+Once registered, you can directly use 14 Wyckoff volume-price analysis tools like diagnose_stock, screen_stocks, get_signal_pending, etc. Try asking "diagnose 000001".`,
   },
   stack: { label: 'Tech Stack', data: 'Market Data Integration', tickflow: 'TickFlow Market Data' },
   community: {

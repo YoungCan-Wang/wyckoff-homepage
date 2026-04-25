@@ -8,6 +8,7 @@ import Stack from './components/Stack'
 import WebApp from './components/WebApp'
 import DataSource from './components/DataSource'
 import CliReference from './components/CliReference'
+import AgentPrompt from './components/AgentPrompt'
 import Community from './components/Community'
 import Footer from './components/Footer'
 
@@ -32,6 +33,7 @@ export default function App() {
           <DataSource />
           <Steps />
           <CliReference />
+          <AgentPrompt />
           <Community />
           <Stack />
         </main>

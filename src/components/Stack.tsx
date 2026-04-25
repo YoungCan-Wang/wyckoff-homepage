@@ -11,6 +11,7 @@ const techs = [
   { name: 'Gemini', color: '#8E75B2' },
   { name: 'Claude', color: '#D4A574' },
   { name: 'OpenAI', color: '#74AA9C' },
+  { name: 'MCP', color: '#06b6d4' },
 ]
 
 export default function Stack() {
