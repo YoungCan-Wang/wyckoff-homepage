@@ -64,6 +64,14 @@ export const zh = {
         chatlog: { title: '对话日志', desc: '完整记录每次对话：用户输入、模型输出、Token 消耗、工具调用，支持按会话浏览。' },
       },
     },
+    backtest: {
+      label: '回测网格',
+      desc: '18 组参数并行回测，自动输出最优组合、夏普矩阵和策略体检',
+      screens: {
+        ranking: { title: '最优参数', desc: '参数梯队表：按夏普比率排序，展示胜率、均收、回撤、样本量。' },
+        matrix: { title: '夏普矩阵', desc: '持有天数 × 止损幅度交叉矩阵，直观定位最优参数区间。' },
+      },
+    },
     groups: [
       {
         title: '认证 · auth',
@@ -241,6 +249,14 @@ export const en: typeof zh = {
       screens: {
         overview: { title: 'Overview', desc: 'Recommendations, signals, portfolio, agent memory, and sync status at a glance.' },
         chatlog: { title: 'Chat Log', desc: 'Full conversation history: user input, model output, token usage, tool calls — browsable by session.' },
+      },
+    },
+    backtest: {
+      label: 'Backtest Grid',
+      desc: '18 parameter combos run in parallel — outputs optimal parameters, Sharpe matrix, and strategy health check',
+      screens: {
+        ranking: { title: 'Ranking', desc: 'Parameter ranking table: sorted by Sharpe ratio, showing win rate, avg return, drawdown, and sample size.' },
+        matrix: { title: 'Matrix', desc: 'Hold period × stop-loss cross matrix — visually pinpoint the optimal parameter zone.' },
       },
     },
     groups: [
