@@ -5,7 +5,7 @@ export const zh = {
     badge: '开源 · 免费 · AGPL-3.0',
     title1: '你说人话',
     title2: '他读盘面',
-    subtitle: 'A 股威科夫量价分析智能体 — 17 个工具自主编排，五层漏斗从 4500+ 股筛至 ~30 候选',
+    subtitle: 'A 股威科夫量价分析智能体 — 10 个专业工具 + 5 个通用能力自主编排，五层漏斗从 4500+ 股筛至 ~30 候选',
     cta_start: '快速开始',
     cta_github: 'GitHub',
     install: 'pip install youngcan-wyckoff-analysis',
@@ -13,7 +13,7 @@ export const zh = {
   features: {
     label: '核心能力',
     items: [
-      { tag: 'Agent', title: '对话式 AI Agent', desc: '自然语言驱动，自主编排 17 个工具（量价分析 + 读写文件 + 执行命令 + 抓取网页）。发个 CSV 路径就能分析。' },
+      { tag: 'Agent', title: '对话式 AI Agent', desc: '自然语言驱动，自主编排 10 个专业工具 + 5 个通用能力（量价分析 + 读写文件 + 执行命令 + 抓取网页）。发个 CSV 路径就能分析。' },
       { tag: 'Funnel', title: '五层漏斗筛选', desc: '垃圾剥离 → 六通道甄选 → 板块共振 → 微观狙击 → AI 审判。基于历史量价结构发现潜力标的，不构成投资建议。' },
       { tag: 'Diagnosis', title: '持仓诊断', desc: '批量体检均线结构、吸筹阶段、触发信号，输出 EXIT / TRIM / HOLD / PROBE / ATTACK。' },
       { tag: 'Report', title: 'AI 三阵营研报', desc: 'LLM 独立给出逻辑破产、储备营地、起跳板三大判决。' },
@@ -24,7 +24,7 @@ export const zh = {
       { tag: 'Confirm', title: '信号确认池', desc: 'L4 触发信号经 1-3 天价格确认，降低假突破风险。' },
       { tag: 'Memory', title: 'Agent 跨会话记忆', desc: '自动提取对话结论存入 SQLite，下次提问时注入相关股票的历史分析上下文。' },
       { tag: 'Realtime', title: '盘中持仓监控', desc: 'TickFlow 实时行情驱动，止损穿破 / 跳空低开 / 放量滞涨 / VWAP 破位四维盘中预警。' },
-      { tag: 'MCP', title: 'MCP Server', desc: '14 个工具通过 MCP 协议对外暴露，Claude Code / Cursor / 任何 MCP Client 即插即用，一行命令注册。' },
+      { tag: 'MCP', title: 'MCP Server', desc: '10 个工具通过 MCP 协议对外暴露，Claude Code / Cursor / 任何 MCP Client 即插即用，一行命令注册。' },
       { tag: 'General', title: '通用 Agent 能力', desc: '不只是股票工具 — 执行命令、读写文件、抓取网页，发个文件路径就能帮你分析数据。' },
     ],
   },
@@ -168,7 +168,7 @@ export const zh = {
    pip install "youngcan-wyckoff-analysis[mcp]"
    claude mcp add wyckoff -- wyckoff-mcp
 
-注册完成后，你就可以直接使用 diagnose_stock、screen_stocks、get_signal_pending 等 14 个威科夫量价分析工具了。试试问"帮我诊断 000001"。`,
+注册完成后，你就可以直接使用 analyze_stock、screen_stocks、portfolio 等 10 个威科夫量价分析工具了。试试问"帮我诊断 000001"。`,
   },
   stack: { label: '技术栈', data: '行情数据接入', tickflow: 'TickFlow 行情数据' },
   community: {
@@ -192,7 +192,7 @@ export const en: typeof zh = {
     badge: 'Open Source · Free · AGPL-3.0',
     title1: 'Talk Human',
     title2: 'It Reads the Tape',
-    subtitle: 'Wyckoff volume-price analysis agent for China A-Shares — 17 tools, autonomous orchestration, funnels 4,500+ stocks to ~30 picks',
+    subtitle: 'Wyckoff volume-price analysis agent for China A-Shares — 10 pro tools + 5 general capabilities, autonomous orchestration, funnels 4,500+ stocks to ~30 picks',
     cta_start: 'Quick Start',
     cta_github: 'GitHub',
     install: 'pip install youngcan-wyckoff-analysis',
@@ -200,7 +200,7 @@ export const en: typeof zh = {
   features: {
     label: 'Key Features',
     items: [
-      { tag: 'Agent', title: 'Conversational AI Agent', desc: 'Natural language driven, orchestrates 17 tools (quant analysis + file I/O + shell exec + web fetch). Drop a CSV path and it analyzes.' },
+      { tag: 'Agent', title: 'Conversational AI Agent', desc: 'Natural language driven, orchestrates 10 pro tools + 5 general capabilities (quant analysis + file I/O + shell exec + web fetch). Drop a CSV path and it analyzes.' },
       { tag: 'Funnel', title: 'Five-Layer Funnel', desc: 'Garbage filter → Six channels → Sector resonance → Micro triggers → AI verdict. Identifies potential based on historical patterns — past performance does not guarantee future results.' },
       { tag: 'Diagnosis', title: 'Portfolio Diagnosis', desc: 'Batch health check: MA structure, accumulation phase, triggers. Outputs EXIT / TRIM / HOLD / PROBE / ATTACK.' },
       { tag: 'Report', title: 'AI Three-Camp Reports', desc: 'LLM renders three verdicts: Logic Bankrupt, Reserve Camp, Springboard.' },
@@ -211,7 +211,7 @@ export const en: typeof zh = {
       { tag: 'Confirm', title: 'Signal Confirmation', desc: 'L4 triggers require 1-3 day price confirmation, reducing false breakout risk.' },
       { tag: 'Memory', title: 'Cross-Session Memory', desc: 'Auto-extracts conversation conclusions to SQLite. Injects relevant stock analysis context on next query.' },
       { tag: 'Realtime', title: 'Intraday Monitor', desc: 'TickFlow real-time quotes: stop-loss breach / gap-down / volume stall / VWAP breakdown — four-dimensional intraday alerts.' },
-      { tag: 'MCP', title: 'MCP Server', desc: '14 tools exposed via MCP protocol — plug into Claude Code / Cursor / any MCP client with one command.' },
+      { tag: 'MCP', title: 'MCP Server', desc: '10 tools exposed via MCP protocol — plug into Claude Code / Cursor / any MCP client with one command.' },
       { tag: 'General', title: 'General Agent', desc: 'Not just stock tools — exec commands, read/write files, fetch web pages. Drop a file path and it analyzes your data.' },
     ],
   },
@@ -355,7 +355,7 @@ export const en: typeof zh = {
    pip install "youngcan-wyckoff-analysis[mcp]"
    claude mcp add wyckoff -- wyckoff-mcp
 
-Once registered, you can directly use 14 Wyckoff volume-price analysis tools like diagnose_stock, screen_stocks, get_signal_pending, etc. Try asking "diagnose 000001".`,
+Once registered, you can directly use 10 Wyckoff volume-price analysis tools like analyze_stock, screen_stocks, portfolio, etc. Try asking "diagnose 000001".`,
   },
   stack: { label: 'Tech Stack', data: 'Market Data Integration', tickflow: 'TickFlow Market Data' },
   community: {
