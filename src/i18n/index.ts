@@ -99,7 +99,6 @@ export const zh = {
         icon: '⚙️',
         items: [
           { cmd: 'wyckoff config show', desc: '显示当前配置' },
-          { cmd: 'wyckoff config tushare <token>', desc: '设置 Tushare Token' },
           { cmd: 'wyckoff config tickflow <api_key>', desc: '设置 TickFlow API Key' },
         ],
       },
@@ -210,8 +209,9 @@ export const zh = {
 3. 运行 wyckoff 启动 CLI，用 /model 命令配置 LLM API Key（Gemini / Claude / OpenAI 任选一个）
 
 4. 配置数据源（可选，提升数据质量）：
-   wyckoff config tushare <your_tushare_token>
    wyckoff config tickflow <your_tickflow_api_key>
+   数据源购买: https://tickflow.org/auth/register?ref=5N4NKTCPL4
+   大模型购买: https://www.1route.dev/register?aff=359904261
 
 5. 安装 MCP 依赖并注册 Wyckoff MCP Server：
    pip install "youngcan-wyckoff-analysis[mcp]"
@@ -228,7 +228,7 @@ export const zh = {
     install: '$ pip install "youngcan-wyckoff-analysis[mcp]" && claude mcp add wyckoff -- wyckoff-mcp',
     tools: '注册后可直接使用 analyze_stock、screen_stocks、portfolio 等 10 个工具',
   },
-  stack: { label: '技术栈', data: '行情数据接入', tickflow: 'TickFlow 实时行情', tushare: 'Tushare 日线数据' },
+  stack: { label: '技术栈', data: 'API Key 购买', tickflow: 'TickFlow 数据源（实时行情 + 分钟K线）', llm: '1Route 大模型（Gemini / Claude / GPT）' },
   community: {
     title: '加入社区',
     desc: '觉得有帮助？给个 Star。赚到钱了？请作者吃个汉堡。',
@@ -351,7 +351,6 @@ export const en: typeof zh = {
         icon: '⚙️',
         items: [
           { cmd: 'wyckoff config show', desc: 'Show current config' },
-          { cmd: 'wyckoff config tushare <token>', desc: 'Set Tushare token' },
           { cmd: 'wyckoff config tickflow <api_key>', desc: 'Set TickFlow API key' },
         ],
       },
@@ -462,8 +461,9 @@ export const en: typeof zh = {
 3. Run wyckoff to launch the CLI, then use the /model command to configure an LLM API Key (Gemini / Claude / OpenAI — pick one)
 
 4. Configure data sources (optional, improves data quality):
-   wyckoff config tushare <your_tushare_token>
    wyckoff config tickflow <your_tickflow_api_key>
+   Data API: https://tickflow.org/auth/register?ref=5N4NKTCPL4
+   LLM API: https://www.1route.dev/register?aff=359904261
 
 5. Install MCP dependency and register the Wyckoff MCP Server:
    pip install "youngcan-wyckoff-analysis[mcp]"
@@ -480,7 +480,7 @@ Once registered, you can directly use 10 Wyckoff volume-price analysis tools lik
     install: '$ pip install "youngcan-wyckoff-analysis[mcp]" && claude mcp add wyckoff -- wyckoff-mcp',
     tools: 'After registration, use analyze_stock, screen_stocks, portfolio and 7 more tools directly',
   },
-  stack: { label: 'Tech Stack', data: 'Market Data Integration', tickflow: 'TickFlow Real-time', tushare: 'Tushare Daily Data' },
+  stack: { label: 'Tech Stack', data: 'Get API Keys', tickflow: 'TickFlow Data (Real-time + Minute K-line)', llm: '1Route LLM (Gemini / Claude / GPT)' },
   community: {
     title: 'Join the Community',
     desc: 'Find it useful? Star the repo. Made some profit? Buy the author a burger.',
