@@ -3,14 +3,16 @@ import { motion } from 'framer-motion'
 import { useI18n } from '../i18n'
 
 const CLIENTS = [
-  { name: 'Claude', icon: 'https://cdn.simpleicons.org/anthropic' },
-  { name: 'Cursor', icon: 'https://cdn.simpleicons.org/cursor' },
-  { name: 'Windsurf', icon: 'https://cdn.simpleicons.org/codeium' },
-  { name: 'VS Code', icon: 'https://cdn.simpleicons.org/visualstudiocode' },
-  { name: 'Cline', icon: 'https://cdn.simpleicons.org/openai' },
-  { name: 'Cherry Studio', icon: 'https://cdn.simpleicons.org/chai' },
-  { name: 'Continue', icon: 'https://cdn.simpleicons.org/cplusplus' },
-  { name: '5ire', icon: 'https://cdn.simpleicons.org/firebase' },
+  { name: 'Claude', color: '#d97706' },
+  { name: 'Cursor', color: '#10b981' },
+  { name: 'Windsurf', color: '#06b6d4' },
+  { name: 'Trae', color: '#ef4444' },
+  { name: 'Cline', color: '#6366f1' },
+  { name: 'VS Code', color: '#3b82f6' },
+  { name: 'Cherry Studio', color: '#f59e0b' },
+  { name: 'Continue', color: '#8b5cf6' },
+  { name: '5ire', color: '#f97316' },
+  { name: 'Dify', color: '#2563eb' },
 ]
 
 const CONFIG_JSON = `{
@@ -45,7 +47,7 @@ export default function McpServer() {
           <p className="text-sm text-zinc-500">{t.mcp.desc}</p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 items-start">
           {/* Left: config code block */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -80,7 +82,7 @@ export default function McpServer() {
             </div>
           </motion.div>
 
-          {/* Right: supported clients grid */}
+          {/* Right: supported clients */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -91,18 +93,25 @@ export default function McpServer() {
             <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-5 font-medium">
               {t.mcp.clients}
             </p>
-            <div className="grid grid-cols-4 gap-3 flex-1 content-start">
+            <div className="grid grid-cols-5 gap-2.5">
               {CLIENTS.map((c) => (
                 <div
                   key={c.name}
-                  className="flex flex-col items-center gap-2 p-3 rounded-xl border border-zinc-200 dark:border-white/[0.06] bg-white dark:bg-zinc-900/40 hover:border-emerald-500/30 transition-colors"
+                  className="flex items-center gap-2 px-3 py-2.5 rounded-lg border border-zinc-200 dark:border-white/[0.08] bg-white dark:bg-zinc-900/50 hover:border-emerald-500/40 transition-colors"
                 >
-                  <img src={c.icon} alt={c.name} className="w-7 h-7 dark:invert dark:opacity-80" />
-                  <span className="text-[11px] text-zinc-600 dark:text-zinc-400 font-medium">{c.name}</span>
+                  <span
+                    className="w-5 h-5 rounded-md flex items-center justify-center text-[10px] font-bold text-white shrink-0"
+                    style={{ backgroundColor: c.color }}
+                  >
+                    {c.name[0]}
+                  </span>
+                  <span className="text-[12px] text-zinc-700 dark:text-zinc-300 font-medium whitespace-nowrap">
+                    {c.name}
+                  </span>
                 </div>
               ))}
             </div>
-            <div className="mt-4 p-3 rounded-lg bg-emerald-500/5 border border-emerald-500/20">
+            <div className="mt-5 p-3 rounded-lg bg-emerald-500/5 border border-emerald-500/20">
               <p className="text-xs text-emerald-700 dark:text-emerald-400">
                 {t.mcp.tools}
               </p>
