@@ -78,7 +78,7 @@ export const zh = {
         title: '认证 · auth',
         icon: '🔐',
         items: [
-          { cmd: 'wyckoff auth login <email> <password>', desc: '登录账户' },
+          { cmd: 'wyckoff auth <email>', desc: '登录账户（密码交互输入）' },
           { cmd: 'wyckoff auth logout', desc: '退出登录' },
           { cmd: 'wyckoff auth status', desc: '查看当前登录状态' },
         ],
@@ -114,27 +114,75 @@ export const zh = {
         ],
       },
       {
+        title: '筛选 · screen',
+        icon: '🔍',
+        items: [
+          { cmd: 'wyckoff screen', desc: '全市场五层漏斗筛选' },
+          { cmd: 'wyckoff screen --board main', desc: '指定板块筛选' },
+        ],
+      },
+      {
+        title: '回测 · backtest',
+        icon: '📈',
+        items: [
+          { cmd: 'wyckoff backtest', desc: '策略历史回测（默认 18 个月）' },
+          { cmd: 'wyckoff bt --hold-days 20 --months 12', desc: '自定义持有天数和回测时长' },
+        ],
+      },
+      {
+        title: '研报 · report',
+        icon: '📝',
+        items: [
+          { cmd: 'wyckoff report 000001,600519', desc: 'AI 深度研报（三阵营分类）' },
+        ],
+      },
+      {
+        title: 'MCP Server',
+        icon: '🔌',
+        items: [
+          { cmd: 'wyckoff mcp', desc: '启动 MCP Server，供 Claude Code / Cursor 调用' },
+        ],
+      },
+      {
         title: '信号 · signal',
         icon: '📡',
         items: [
-          { cmd: 'wyckoff signal', desc: '查看今日触发信号' },
-          { cmd: 'wyckoff signal --json', desc: 'JSON 格式输出' },
+          { cmd: 'wyckoff signal', desc: '查看信号确认池' },
+          { cmd: 'wyckoff signal pending', desc: '仅看待确认信号' },
         ],
       },
       {
         title: '推荐 · recommend',
         icon: '🎯',
         items: [
-          { cmd: 'wyckoff recommend', desc: '查看今日推荐标的' },
-          { cmd: 'wyckoff recommend --json', desc: 'JSON 格式输出' },
+          { cmd: 'wyckoff recommend', desc: '查看 AI 推荐跟踪' },
+          { cmd: 'wyckoff rec -n 50', desc: '返回更多条数' },
+        ],
+      },
+      {
+        title: '记忆 · memory',
+        icon: '🧠',
+        items: [
+          { cmd: 'wyckoff memory', desc: '查看 Agent 记忆列表' },
+          { cmd: 'wyckoff mem search 银行', desc: '搜索记忆' },
+          { cmd: 'wyckoff mem clear', desc: '清除过期记忆' },
+          { cmd: 'wyckoff mem delete <id>', desc: '删除指定记忆' },
+        ],
+      },
+      {
+        title: '日志 · log',
+        icon: '💬',
+        items: [
+          { cmd: 'wyckoff log', desc: '查看最近对话日志' },
+          { cmd: 'wyckoff log --session <id>', desc: '查看指定会话' },
         ],
       },
       {
         title: '面板 · dashboard',
         icon: '📊',
         items: [
-          { cmd: 'wyckoff dashboard', desc: '启动本地可视化面板' },
-          { cmd: 'wyckoff dashboard --port 9000', desc: '自定义端口' },
+          { cmd: 'wyckoff dashboard', desc: '启动本地可视化面板（TUI 自动打开）' },
+          { cmd: 'wyckoff dash --port 9000', desc: '自定义端口' },
         ],
       },
       {
@@ -282,7 +330,7 @@ export const en: typeof zh = {
         title: 'Auth',
         icon: '🔐',
         items: [
-          { cmd: 'wyckoff auth login <email> <password>', desc: 'Log in to your account' },
+          { cmd: 'wyckoff auth <email>', desc: 'Log in (password prompted interactively)' },
           { cmd: 'wyckoff auth logout', desc: 'Log out' },
           { cmd: 'wyckoff auth status', desc: 'Check current login status' },
         ],
@@ -318,27 +366,75 @@ export const en: typeof zh = {
         ],
       },
       {
+        title: 'Screen',
+        icon: '🔍',
+        items: [
+          { cmd: 'wyckoff screen', desc: 'Full-market 5-layer funnel screening' },
+          { cmd: 'wyckoff screen --board main', desc: 'Screen specific board' },
+        ],
+      },
+      {
+        title: 'Backtest',
+        icon: '📈',
+        items: [
+          { cmd: 'wyckoff backtest', desc: 'Strategy backtest (default 18 months)' },
+          { cmd: 'wyckoff bt --hold-days 20 --months 12', desc: 'Custom hold days and period' },
+        ],
+      },
+      {
+        title: 'Report',
+        icon: '📝',
+        items: [
+          { cmd: 'wyckoff report 000001,600519', desc: 'AI deep report (3-camp classification)' },
+        ],
+      },
+      {
+        title: 'MCP Server',
+        icon: '🔌',
+        items: [
+          { cmd: 'wyckoff mcp', desc: 'Start MCP Server for Claude Code / Cursor' },
+        ],
+      },
+      {
         title: 'Signal',
         icon: '📡',
         items: [
-          { cmd: 'wyckoff signal', desc: 'View today\'s triggered signals' },
-          { cmd: 'wyckoff signal --json', desc: 'JSON output' },
+          { cmd: 'wyckoff signal', desc: 'View signal confirmation pool' },
+          { cmd: 'wyckoff signal pending', desc: 'Pending signals only' },
         ],
       },
       {
         title: 'Recommend',
         icon: '🎯',
         items: [
-          { cmd: 'wyckoff recommend', desc: 'View today\'s recommendations' },
-          { cmd: 'wyckoff recommend --json', desc: 'JSON output' },
+          { cmd: 'wyckoff recommend', desc: 'View AI recommendation tracking' },
+          { cmd: 'wyckoff rec -n 50', desc: 'Return more results' },
+        ],
+      },
+      {
+        title: 'Memory',
+        icon: '🧠',
+        items: [
+          { cmd: 'wyckoff memory', desc: 'View agent memory list' },
+          { cmd: 'wyckoff mem search bank', desc: 'Search memories' },
+          { cmd: 'wyckoff mem clear', desc: 'Clear expired memories' },
+          { cmd: 'wyckoff mem delete <id>', desc: 'Delete specific memory' },
+        ],
+      },
+      {
+        title: 'Log',
+        icon: '💬',
+        items: [
+          { cmd: 'wyckoff log', desc: 'View recent chat logs' },
+          { cmd: 'wyckoff log --session <id>', desc: 'View specific session' },
         ],
       },
       {
         title: 'Dashboard',
         icon: '📊',
         items: [
-          { cmd: 'wyckoff dashboard', desc: 'Launch local visualization panel' },
-          { cmd: 'wyckoff dashboard --port 9000', desc: 'Custom port' },
+          { cmd: 'wyckoff dashboard', desc: 'Launch local dashboard (auto-opens with TUI)' },
+          { cmd: 'wyckoff dash --port 9000', desc: 'Custom port' },
         ],
       },
       {

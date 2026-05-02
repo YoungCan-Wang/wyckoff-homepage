@@ -2,17 +2,23 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useI18n } from '../i18n'
 
-const CLIENTS = [
-  { name: 'Claude', color: '#d97706' },
-  { name: 'Cursor', color: '#10b981' },
-  { name: 'Windsurf', color: '#06b6d4' },
-  { name: 'Trae', color: '#ef4444' },
-  { name: 'Cline', color: '#6366f1' },
-  { name: 'VS Code', color: '#3b82f6' },
-  { name: 'Cherry Studio', color: '#f59e0b' },
-  { name: 'Continue', color: '#8b5cf6' },
-  { name: '5ire', color: '#f97316' },
-  { name: 'Dify', color: '#2563eb' },
+type Client = {
+  name: string
+  icon: string
+  fallback: string
+}
+
+const CLIENTS: Client[] = [
+  { name: 'Claude Code', icon: `${import.meta.env.BASE_URL}logos/claude-code.svg`, fallback: 'CC' },
+  { name: 'Cursor', icon: `${import.meta.env.BASE_URL}logos/cursor.svg`, fallback: 'CU' },
+  { name: 'Codex', icon: `${import.meta.env.BASE_URL}logos/codex.svg`, fallback: 'CO' },
+  { name: 'Trae', icon: `${import.meta.env.BASE_URL}logos/trae.svg`, fallback: 'TR' },
+  { name: 'CodeBuddy', icon: `${import.meta.env.BASE_URL}logos/codebuddy.svg`, fallback: 'CB' },
+  { name: 'Qoder', icon: `${import.meta.env.BASE_URL}logos/qoder.svg`, fallback: 'QD' },
+  { name: 'OpenClaw', icon: `${import.meta.env.BASE_URL}logos/openclaw.svg`, fallback: 'OC' },
+  { name: 'Hermes', icon: `${import.meta.env.BASE_URL}logos/hermes.svg`, fallback: 'HM' },
+  { name: 'VS Code', icon: `${import.meta.env.BASE_URL}logos/vscode.svg`, fallback: 'VS' },
+  { name: 'Antigravity', icon: `${import.meta.env.BASE_URL}logos/antigravity.svg`, fallback: 'AG' },
 ]
 
 const CONFIG_JSON = `{
@@ -93,18 +99,26 @@ export default function McpServer() {
             <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-5 font-medium">
               {t.mcp.clients}
             </p>
-            <div className="grid grid-cols-5 gap-2.5">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5">
               {CLIENTS.map((c) => (
                 <div
                   key={c.name}
                   className="flex items-center gap-2 px-3 py-2.5 rounded-lg border border-zinc-200 dark:border-white/[0.08] bg-white dark:bg-zinc-900/50 hover:border-emerald-500/40 transition-colors"
                 >
-                  <span
-                    className="w-5 h-5 rounded-md flex items-center justify-center text-[10px] font-bold text-white shrink-0"
-                    style={{ backgroundColor: c.color }}
-                  >
-                    {c.name[0]}
-                  </span>
+                  <div className="relative w-5 h-5 shrink-0 rounded-md overflow-hidden bg-zinc-100 dark:bg-zinc-800">
+                    <span className="absolute inset-0 flex items-center justify-center text-[9px] font-semibold text-zinc-600 dark:text-zinc-300">
+                      {c.fallback}
+                    </span>
+                    <img
+                      src={c.icon}
+                      alt={`${c.name} logo`}
+                      className="absolute inset-0 w-5 h-5 bg-white object-contain z-10"
+                      loading="lazy"
+                      onError={(e) => {
+                        e.currentTarget.style.display = 'none'
+                      }}
+                    />
+                  </div>
                   <span className="text-[12px] text-zinc-700 dark:text-zinc-300 font-medium whitespace-nowrap">
                     {c.name}
                   </span>
