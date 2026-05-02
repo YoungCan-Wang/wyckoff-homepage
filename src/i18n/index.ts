@@ -171,7 +171,16 @@ export const zh = {
 
 注册完成后，你就可以直接使用 analyze_stock、screen_stocks、portfolio 等 10 个威科夫量价分析工具了。试试问"帮我诊断 000001"。`,
   },
-  stack: { label: '技术栈', data: '行情数据接入', tickflow: 'TickFlow 行情数据' },
+  mcp: {
+    label: 'MCP Server',
+    desc: '通过 MCP 协议暴露 10 个威科夫量价分析工具，一行注册即插即用',
+    clients: '支持所有 MCP 兼容客户端',
+    copy: '复制配置',
+    copied: '已复制 ✓',
+    install: '$ pip install "youngcan-wyckoff-analysis[mcp]" && claude mcp add wyckoff -- wyckoff-mcp',
+    tools: '注册后可直接使用 analyze_stock、screen_stocks、portfolio 等 10 个工具',
+  },
+  stack: { label: '技术栈', data: '行情数据接入', tickflow: 'TickFlow 实时行情', tushare: 'Tushare 日线数据' },
   community: {
     title: '加入社区',
     desc: '觉得有帮助？给个 Star。赚到钱了？请作者吃个汉堡。',
@@ -359,7 +368,16 @@ export const en: typeof zh = {
 
 Once registered, you can directly use 10 Wyckoff volume-price analysis tools like analyze_stock, screen_stocks, portfolio, etc. Try asking "diagnose 000001".`,
   },
-  stack: { label: 'Tech Stack', data: 'Market Data Integration', tickflow: 'TickFlow Market Data' },
+  mcp: {
+    label: 'MCP Server',
+    desc: 'Expose 10 Wyckoff volume-price analysis tools via MCP protocol — one command to register',
+    clients: 'Works with all MCP-compatible clients',
+    copy: 'Copy config',
+    copied: 'Copied ✓',
+    install: '$ pip install "youngcan-wyckoff-analysis[mcp]" && claude mcp add wyckoff -- wyckoff-mcp',
+    tools: 'After registration, use analyze_stock, screen_stocks, portfolio and 7 more tools directly',
+  },
+  stack: { label: 'Tech Stack', data: 'Market Data Integration', tickflow: 'TickFlow Real-time', tushare: 'Tushare Daily Data' },
   community: {
     title: 'Join the Community',
     desc: 'Find it useful? Star the repo. Made some profit? Buy the author a burger.',
