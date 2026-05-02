@@ -99,11 +99,11 @@ export default function McpServer() {
             <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-5 font-medium">
               {t.mcp.clients}
             </p>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5">
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-3">
               {CLIENTS.map((c) => (
                 <div
                   key={c.name}
-                  className="flex items-center gap-2 px-3 py-2.5 rounded-lg border border-zinc-200 dark:border-white/[0.08] bg-white dark:bg-zinc-900/50 hover:border-emerald-500/40 transition-colors"
+                  className="min-w-0 flex items-center gap-1.5 px-2.5 py-2.5 rounded-lg border border-zinc-200 dark:border-white/[0.08] bg-white dark:bg-zinc-900/50 hover:border-emerald-500/40 transition-colors"
                 >
                   <div className="relative w-5 h-5 shrink-0 rounded-md overflow-hidden bg-zinc-100 dark:bg-zinc-800">
                     <span className="absolute inset-0 flex items-center justify-center text-[9px] font-semibold text-zinc-600 dark:text-zinc-300">
@@ -119,7 +119,7 @@ export default function McpServer() {
                       }}
                     />
                   </div>
-                  <span className="text-[12px] text-zinc-700 dark:text-zinc-300 font-medium whitespace-nowrap">
+                  <span className="min-w-0 text-[11px] sm:text-[12px] leading-tight text-zinc-700 dark:text-zinc-300 font-medium">
                     {c.name}
                   </span>
                 </div>
