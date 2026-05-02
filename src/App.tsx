@@ -28,10 +28,10 @@ export default function App() {
         <Navbar />
         <main>
           <Hero />
+          <Steps />
           <Features />
           <WebApp />
           <DataSource />
-          <Steps />
           <CliReference />
           <AgentPrompt />
           <Community />
