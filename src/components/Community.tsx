@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion'
 import { useI18n } from '../i18n'
 
+const BASE = import.meta.env.BASE_URL
+
 export default function Community() {
   const { t } = useI18n()
 
@@ -28,12 +30,12 @@ export default function Community() {
         {/* Group QR codes */}
         <div className="grid grid-cols-2 gap-6 max-w-md mx-auto mb-12">
           <div className="flex flex-col items-center gap-2">
-            <img src="/qr/qq-group.jpg" alt="QQ Group" className="w-40 h-40 rounded-xl border border-zinc-200 dark:border-white/[0.08] object-cover" />
+            <img src={`${BASE}qr/qq-group.jpg`} alt="QQ Group" className="w-40 h-40 rounded-xl border border-zinc-200 dark:border-white/[0.08] object-cover" />
             <span className="text-sm font-medium text-zinc-700 dark:text-zinc-300">{t.community.qq}</span>
             <span className="text-xs text-zinc-500">{t.community.qqNum}</span>
           </div>
           <div className="flex flex-col items-center gap-2">
-            <img src="/qr/feishu-group.png" alt="Feishu Group" className="w-40 h-40 rounded-xl border border-zinc-200 dark:border-white/[0.08] object-cover" />
+            <img src={`${BASE}qr/feishu-group.png`} alt="Feishu Group" className="w-40 h-40 rounded-xl border border-zinc-200 dark:border-white/[0.08] object-cover" />
             <span className="text-sm font-medium text-zinc-700 dark:text-zinc-300">{t.community.feishu}</span>
           </div>
         </div>
@@ -44,11 +46,11 @@ export default function Community() {
           <p className="text-sm text-zinc-500 mb-6">{t.community.sponsorDesc}</p>
           <div className="grid grid-cols-2 gap-6 max-w-sm mx-auto">
             <div className="flex flex-col items-center gap-2">
-              <img src="/qr/alipay.jpg" alt="Alipay" className="w-40 h-40 rounded-xl border border-zinc-200 dark:border-white/[0.08] object-cover" />
+              <img src={`${BASE}qr/alipay.jpg`} alt="Alipay" className="w-40 h-40 rounded-xl border border-zinc-200 dark:border-white/[0.08] object-cover" />
               <span className="text-sm font-medium text-zinc-700 dark:text-zinc-300">{t.community.alipay}</span>
             </div>
             <div className="flex flex-col items-center gap-2">
-              <img src="/qr/wechat.png" alt="WeChat" className="w-40 h-40 rounded-xl border border-zinc-200 dark:border-white/[0.08] object-cover" />
+              <img src={`${BASE}qr/wechat.png`} alt="WeChat" className="w-40 h-40 rounded-xl border border-zinc-200 dark:border-white/[0.08] object-cover" />
               <span className="text-sm font-medium text-zinc-700 dark:text-zinc-300">{t.community.wechat}</span>
             </div>
           </div>
