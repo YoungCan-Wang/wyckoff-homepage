@@ -8,7 +8,7 @@ export const zh = {
     subtitle: 'A 股威科夫量价分析智能体 — 10 个专业工具 + 5 个通用能力自主编排，五层漏斗从 4500+ 股筛至 ~30 候选',
     cta_start: '快速开始',
     cta_github: 'GitHub',
-    install: 'pip install youngcan-wyckoff-analysis',
+    install: 'curl -fsSL https://raw.githubusercontent.com/YoungCan-Wang/Wyckoff-Analysis/main/install.sh | bash',
   },
   features: {
     label: '核心能力',
@@ -18,8 +18,9 @@ export const zh = {
       { tag: 'Diagnosis', title: '持仓诊断', desc: '批量体检均线结构、吸筹阶段、触发信号，输出 EXIT / TRIM / HOLD / PROBE / ATTACK。' },
       { tag: 'Report', title: 'AI 三阵营研报', desc: 'LLM 独立给出逻辑破产、储备营地、起跳板三大判决。' },
       { tag: 'Tail', title: '尾盘策略', desc: '盘中 14:00 自动执行：规则打分 + LLM 复判两阶段，筛选尾盘买入标的推送。' },
-      { tag: 'Dashboard', title: '本地可视化面板', desc: 'wyckoff dashboard 一键启动：推荐、信号、持仓、Agent 记忆、对话日志，暗色/亮色 + 中英双语。' },
-      { tag: 'Cron', title: '11 条自动化管线', desc: 'GitHub Actions：漏斗 + 研报 + 再平衡 + 尾盘策略 + 盘中监控 + 盘前风控 + 回测网格。' },
+      { tag: 'Skills', title: 'Skills 系统', desc: '内置 /screen、/checkup、/report、/strategy、/backtest 一键复合工作流；~/.wyckoff/skills/*.md 用户可自定义扩展。' },
+      { tag: 'Dashboard', title: '本地可视化面板', desc: 'wyckoff dashboard 一键启动：推荐、信号、持仓、后台任务历史、Agent 记忆、对话日志，暗色/亮色 + 中英双语。启动 CLI 时自动打开。' },
+      { tag: 'Cron', title: '7 条自动化管线', desc: 'GitHub Actions：漏斗+研报+策略 / 尾盘买入 / 盘前风控 / 涨停复盘 / 推荐追踪 / 回测网格 / 缓存维护。' },
       { tag: 'Push', title: '多通道推送', desc: '飞书、企微、钉钉、Telegram 四通道，信号实时触达。' },
       { tag: 'Confirm', title: '信号确认池', desc: 'L4 触发信号经 1-3 天价格确认，降低假突破风险。' },
       { tag: 'Memory', title: 'Agent 跨会话记忆', desc: '自动提取对话结论存入 SQLite，下次提问时注入相关股票的历史分析上下文。' },
@@ -42,7 +43,7 @@ export const zh = {
   steps: {
     label: '三步启动',
     items: [
-      { n: '01', title: '安装', cmd: 'pip install youngcan-wyckoff-analysis' },
+      { n: '01', title: '安装', cmd: 'curl -fsSL https://raw.githubusercontent.com/YoungCan-Wang/Wyckoff-Analysis/main/install.sh | bash' },
       { n: '02', title: '启动', cmd: 'wyckoff' },
       { n: '03', title: '对话', cmd: '> 帮我诊断一下持仓' },
     ],
@@ -58,9 +59,9 @@ export const zh = {
     },
     dashboard: {
       label: '本地可视化面板',
-      desc: '全部数据存储在本地 SQLite，无需联网，安全可信',
+      desc: '全部数据存储在本地 SQLite，无需联网，安全可信。启动 CLI 时自动在浏览器打开。',
       screens: {
-        overview: { title: '数据总览', desc: '推荐跟踪、信号池、持仓、Agent 记忆、同步状态一目了然。' },
+        overview: { title: '数据总览', desc: '推荐跟踪、信号池、持仓、后台任务历史、Agent 记忆、同步状态一目了然。' },
         chatlog: { title: '对话日志', desc: '完整记录每次对话：用户输入、模型输出、Token 消耗、工具调用，支持按会话浏览。' },
       },
     },
@@ -195,7 +196,7 @@ export const en: typeof zh = {
     subtitle: 'Wyckoff volume-price analysis agent for China A-Shares — 10 pro tools + 5 general capabilities, autonomous orchestration, funnels 4,500+ stocks to ~30 picks',
     cta_start: 'Quick Start',
     cta_github: 'GitHub',
-    install: 'pip install youngcan-wyckoff-analysis',
+    install: 'curl -fsSL https://raw.githubusercontent.com/YoungCan-Wang/Wyckoff-Analysis/main/install.sh | bash',
   },
   features: {
     label: 'Key Features',
@@ -205,8 +206,9 @@ export const en: typeof zh = {
       { tag: 'Diagnosis', title: 'Portfolio Diagnosis', desc: 'Batch health check: MA structure, accumulation phase, triggers. Outputs EXIT / TRIM / HOLD / PROBE / ATTACK.' },
       { tag: 'Report', title: 'AI Three-Camp Reports', desc: 'LLM renders three verdicts: Logic Bankrupt, Reserve Camp, Springboard.' },
       { tag: 'Tail', title: 'Tail-Buy Strategy', desc: 'Runs at 14:00 intraday: rule scoring + LLM second-pass, two-stage end-of-day buy candidate screening.' },
-      { tag: 'Dashboard', title: 'Local Dashboard', desc: 'wyckoff dashboard: recommendations, signals, portfolio, agent memory, chat logs. Dark/light theme + zh/en i18n.' },
-      { tag: 'Cron', title: '11 Automation Pipelines', desc: 'GitHub Actions: funnel + report + rebalance + tail-buy + intraday monitor + pre-market risk + backtest grid.' },
+      { tag: 'Skills', title: 'Skills System', desc: 'Built-in /screen, /checkup, /report, /strategy, /backtest for one-tap workflows. Extend with custom ~/.wyckoff/skills/*.md files.' },
+      { tag: 'Dashboard', title: 'Local Dashboard', desc: 'wyckoff dashboard: recommendations, signals, portfolio, background task history, agent memory, chat logs. Dark/light + zh/en. Auto-opens with CLI.' },
+      { tag: 'Cron', title: '7 Automation Pipelines', desc: 'GitHub Actions: funnel+report+strategy / tail-buy / pre-market risk / limit-up review / rec tracking / backtest grid / cache cleanup.' },
       { tag: 'Push', title: 'Multi-Channel Push', desc: 'Feishu, WeCom, DingTalk, Telegram — signals delivered in real time.' },
       { tag: 'Confirm', title: 'Signal Confirmation', desc: 'L4 triggers require 1-3 day price confirmation, reducing false breakout risk.' },
       { tag: 'Memory', title: 'Cross-Session Memory', desc: 'Auto-extracts conversation conclusions to SQLite. Injects relevant stock analysis context on next query.' },
@@ -229,7 +231,7 @@ export const en: typeof zh = {
   steps: {
     label: 'Get Started',
     items: [
-      { n: '01', title: 'Install', cmd: 'pip install youngcan-wyckoff-analysis' },
+      { n: '01', title: 'Install', cmd: 'curl -fsSL https://raw.githubusercontent.com/YoungCan-Wang/Wyckoff-Analysis/main/install.sh | bash' },
       { n: '02', title: 'Launch', cmd: 'wyckoff' },
       { n: '03', title: 'Talk', cmd: '> Diagnose my portfolio' },
     ],
@@ -245,9 +247,9 @@ export const en: typeof zh = {
     },
     dashboard: {
       label: 'Local Dashboard',
-      desc: 'All data stored in local SQLite — no network required, secure and trustworthy',
+      desc: 'All data stored in local SQLite — no network required, secure and trustworthy. Auto-opens in browser with CLI.',
       screens: {
-        overview: { title: 'Overview', desc: 'Recommendations, signals, portfolio, agent memory, and sync status at a glance.' },
+        overview: { title: 'Overview', desc: 'Recommendations, signals, portfolio, background task history, agent memory, and sync status at a glance.' },
         chatlog: { title: 'Chat Log', desc: 'Full conversation history: user input, model output, token usage, tool calls — browsable by session.' },
       },
     },
